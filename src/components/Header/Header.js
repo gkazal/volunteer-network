@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css'
 import logo from '../../images/logos/logo.png'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { Button} from 'react-bootstrap';
+import { UserContext } from '../../App';
 
 const Header = () => {
+    const { loggedInUser } = useContext(UserContext);
 
     return (
 
@@ -32,6 +34,11 @@ const Header = () => {
                     <li>
                         <Button variant="primary">Register</Button>
                     </li>
+                    
+                    <li style={{ color: 'black' }}>
+                        {loggedInUser.displayName}
+                    </li>
+
                    
                     <li>
                         <Link to="/admin">
