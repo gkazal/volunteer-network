@@ -31,10 +31,17 @@ function App() {
       <Router>
         <Switch>
 
-          <Route path="/home/">
+          <Route path="/home">
             <Header></Header>
             <Home />
           </Route>
+
+          <Route exact path="/">
+            <Header></Header>
+
+            <Home />
+          </Route>
+
 
           <Route path="/inventory">
             <Inventory />
